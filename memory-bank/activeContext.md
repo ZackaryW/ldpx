@@ -8,7 +8,7 @@ Project is in a stable, documented state with comprehensive docstrings added to 
 ### Documentation Overhaul
 Added comprehensive docstrings to entire codebase:
 
-1. **Main Package** (`ldx/__init__.py`)
+1. **Main Package** (`ldpx/__init__.py`)
    - Module docstring explaining package purpose
    - Inline comments for configuration constants
 
