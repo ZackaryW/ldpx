@@ -1,5 +1,5 @@
 [project]
-name = "ldx"
+name = "ldpx"
 version = "0.3.0"
 description = "ldplayer abstraction layer for python (bundled with a CLI with batch support)."
 readme = "README.md"
@@ -12,7 +12,7 @@ dependencies = [
 ]
 
 [project.scripts]
-ldx = "ldx.click:cli"
+ldpx = "ldpx.click:cli"
 
 [project.optional-dependencies]
 click = [

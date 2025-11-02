@@ -21,8 +21,8 @@ LDX bridges the gap by providing:
 
 ### For Python Developers
 ```python
-from ldx.core.objs.attr import LDAttr
-from ldx.core.objs.console import Console
+from ldpx.core.objs.attr import LDAttr
+from ldpx.core.objs.console import Console
 
 # Auto-discover or load from config
 attr = LDAttr.discover()
@@ -40,18 +40,18 @@ console.launch(instances=lambda x: x.name.startswith('test'))  # Lambda filter
 ### For CLI Users
 ```bash
 # Auto-discover installation
-ldx discover
+ldpx discover
 
 # Single instance commands
-ldx console launch --name instance1
-ldx console query list2
+ldpx console launch --name instance1
+ldpx console query list2
 
 # Batch operations
-ldx console exec launch -bs "0,1,2"  # Comma-separated
-ldx console exec launch -bl "lambda x: x['name'].startswith('game')"  # Lambda
+ldpx console exec launch -bs "0,1,2"  # Comma-separated
+ldpx console exec launch -bl "lambda x: x['name'].startswith('game')"  # Lambda
 
 # App management
-ldx console app installapp --name instance1 --filename app.apk -bs "0,1,2"
+ldpx console app installapp --name instance1 --filename app.apk -bs "0,1,2"
 ```
 
 ## User Experience Goals

@@ -1,4 +1,4 @@
-# LDX - LDPlayer Automation Toolkit
+# LDPX - LDPlayer Automation Toolkit
 
 A powerful Python abstraction layer and CLI tool for controlling LDPlayer Android emulator instances. Manage multiple emulators programmatically with comprehensive batch operation support.
 
@@ -21,19 +21,19 @@ A powerful Python abstraction layer and CLI tool for controlling LDPlayer Androi
 ### Using uv (recommended)
 ```bash
 # With CLI support
-uv add ldx[click]
+uv add ldpx[click]
 
 # API only
-uv add ldx
+uv add ldpx
 ```
 
 ### Using pip
 ```bash
 # With CLI support
-pip install ldx[click]
+pip install ldpx[click]
 
 # API only
-pip install ldx
+pip install ldpx
 ```
 
 ## Quick Start
@@ -41,17 +41,17 @@ pip install ldx
 ### Auto-Discovery
 ```bash
 # Discover LDPlayer installation automatically
-ldx discover
+ldpx discover
 
 # Verify configuration
-ldx console query list2
+ldpx console query list2
 ```
 
 ### Python API
 
 ```python
-from ldx.core.objs.attr import LDAttr
-from ldx.core.objs.console import Console
+from ldpx.core.objs.attr import LDAttr
+from ldpx.core.objs.console import Console
 
 # Initialize (auto-discover or load from config)
 attr = LDAttr.discover()
@@ -77,23 +77,23 @@ for inst in instances:
 
 ```bash
 # Launch single instance
-ldx console exec launch --name instance1
+ldpx console exec launch --name instance1
 
 # Batch launch by indices
-ldx console exec launch -bs "0,1,2"
+ldpx console exec launch -bs "0,1,2"
 
 # Batch launch by lambda filter
-ldx console exec launch -bl "lambda x: x['name'].startswith('game')"
+ldpx console exec launch -bl "lambda x: x['name'].startswith('game')"
 
 # Install app on multiple instances
-ldx console app installapp --filename app.apk -bs "0,1,2"
+ldpx console app installapp --filename app.apk -bs "0,1,2"
 
 # Query instance information
-ldx console query list2
-ldx console query isrunning --name instance1
+ldpx console query list2
+ldpx console query isrunning --name instance1
 
 # Modify instance settings
-ldx console config modify --name instance1 --resolution "1920x1080" --cpu 4 --memory 4096
+ldpx console config modify --name instance1 --resolution "1920x1080" --cpu 4 --memory 4096
 ```
 
 ## Command Categories
@@ -155,19 +155,19 @@ Batch operations allow you to execute commands on multiple instances at once.
 ### By Comma-Separated List
 ```bash
 # Indices
-ldx console exec launch -bs "0,1,2"
+ldpx console exec launch -bs "0,1,2"
 
 # Names
-ldx console exec launch -bs "instance1,instance2,instance3"
+ldpx console exec launch -bs "instance1,instance2,instance3"
 ```
 
 ### By Lambda Filter
 ```bash
 # Filter by name pattern
-ldx console exec launch -bl "lambda x: x['name'].startswith('game')"
+ldpx console exec launch -bl "lambda x: x['name'].startswith('game')"
 
 # Filter by running status
-ldx console exec quit -bl "lambda x: x['android_started_int'] == 1"
+ldpx console exec quit -bl "lambda x: x['android_started_int'] == 1"
 ```
 
 ### Python API Batch
@@ -188,7 +188,7 @@ console.launch(console_func=lambda c: c.launch(name='specific'))
 ## Configuration Management
 
 ```python
-from ldx.ext.obj.leidian import LeidianFile
+from ldpx.ext.obj.leidian import LeidianFile
 
 # Initialize
 leidian_file = LeidianFile(attr)
@@ -208,7 +208,7 @@ leidian_file.dumpLeidianConfig(instance_config)
 
 ### Keyboard Mapping Management
 ```python
-from ldx.ext.obj.kmp import KMPFile
+from ldpx.ext.obj.kmp import KMPFile
 
 kmp_file = KMPFile(attr)
 
@@ -225,7 +225,7 @@ kmp_file.dump("game_mapping.kmp", mapping)
 
 ### Macro/Script Management
 ```python
-from ldx.ext.obj.record import RecordFile
+from ldpx.ext.obj.record import RecordFile
 
 record_file = RecordFile(attr)
 
@@ -249,7 +249,7 @@ console.operaterecord(name="instance1", content=record)
 
 ## Configuration
 
-LDX stores configuration in `~/.ldx/ld/config.json`:
+LDPX stores configuration in `~/.ldpx/ld/config.json`:
 
 ```json
 {
@@ -260,7 +260,7 @@ LDX stores configuration in `~/.ldx/ld/config.json`:
 }
 ```
 
-Add paths manually or use `ldx discover` for automatic detection.
+Add paths manually or use `ldpx discover` for automatic detection.
 
 ## Documentation
 

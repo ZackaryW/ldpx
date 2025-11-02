@@ -1,4 +1,4 @@
-# Tech Context: LDX
+# Tech Context: LDPX
 
 ## Technologies
 
@@ -17,7 +17,7 @@
 ```bash
 # Clone repository
 git clone <repo-url>
-cd ldx
+cd ldpx
 
 # Install with CLI support
 uv sync --all-extras
@@ -28,9 +28,9 @@ uv sync
 
 ### Project Structure
 ```
-ldx/
+ldpx/
 ├── pyproject.toml          # Project metadata and dependencies
-├── src/ldx/                # Source code
+├── src/ldpx/                # Source code
 ├── memory-bank/            # Project documentation
 └── README.md               # Public documentation
 ```
@@ -38,7 +38,7 @@ ldx/
 ### Environment
 - Python version specified in `.python-version`: 3.12
 - Dependencies managed via pyproject.toml
-- Entry point: `ldx` command (maps to `ldx.click:cli`)
+- Entry point: `ldpx` command (maps to `ldpx.click:cli`)
 
 ## Technical Constraints
 
@@ -75,7 +75,7 @@ ldx/
 
 ### click (Optional)
 - Used for: CLI implementation only
-- Imported conditionally in `ldx.click` module
+- Imported conditionally in `ldpx.click` module
 - Not required for Python API usage
 - Features used:
   - Command groups
@@ -88,7 +88,7 @@ ldx/
 ### Configuration Management
 ```python
 # User config location
-~/.ldx/ld/config.json
+~/.ldpx/ld/config.json
 
 # Structure
 {

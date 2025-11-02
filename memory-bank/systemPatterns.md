@@ -3,7 +3,7 @@
 ## Architecture Overview
 
 ```
-ldx/
+ldpx/
 ├── core/           # Core functionality (command execution, batch ops)
 │   ├── enums/      # Command categorization
 │   ├── interfaces/ # IConsole interface definition
